@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Glaucyrlei">
+	<title>Calculadora</title>
+	<link rel="stylesheet" type="text/css" href="Calc.css">
+
+	<script type="text/javascript">
+		
+		function inserir(num) {//insere um numero no visor
+			var numero = document.getElementById('resultado').innerHTML;
+			document.getElementById('resultado').innerHTML = numero + num;
+		}
+		
+		function apagar() {//apaga os numeros do visor
+			document.getElementById('resultado').innerHTML = "";		
+		}
+		
+		function calcular() {//realiza a equação matematica de forma automatica
+			var resultado = document.getElementById('resultado').innerHTML;
+
+			if (resultado) {
+				document.getElementById('resultado').innerHTML = eval(resultado);
+			}	
+		}	
+		function limpar() {
+			var resultado = document.getElementById('resultado').innerHTML;
+			document.getElementById('resultado').innerHTML= resultado.substring(0, resultado.length -1);
+		}
+
+	</script>
+
+</head>
+<body>
+
+	<div class="corpo">
+		<center>
+			<p id="resultado"></p>
+			<div class="fil">
+				<button id="C" onclick="apagar()">C</button> <button id="<" onclick="limpar()"><</button> <button onclick="inserir('/')">/</button>
+			</div>
+			<div class="fil1">
+				<button id="7" onclick="inserir('7')">7</button> <button id="8" onclick="inserir('8')">8</button>
+				<button id="9" onclick="inserir('9')">9</button> <button id="x" onclick="inserir('*')">x</button>
+			</div>
+			<div class="fil2">
+				<button id="4" onclick="inserir('4')">4</button> <button id="5" onclick="inserir('5')">5</button>
+				<button id="6" onclick="inserir('6')">6</button> <button id="-" onclick="inserir('-')">-</button>
+			</div>
+			<div class="fil3">
+				<button id="1" onclick="inserir('1')">1</button> <button id="2" onclick="inserir('2')">2</button>
+				<button id="3" onclick="inserir('3')">3</button> <button id="+" onclick="inserir('+')">+</button>
+			</div>
+			<div class="fil4">
+				<button id="0" onclick="inserir('0')">0</button> <button id="00" onclick="inserir('00')">00</button>
+				<button id="ponto" onclick="inserir('.')">.</button> <button id="igual" onclick="calcular()">=</button>
+			</div>
+		</center>
+	</div>
+
+	<h1>Made by Glaucyrlei</h1>
+
+</body>
+</html>
